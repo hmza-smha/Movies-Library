@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "movies-library",
+  "description": "",
+  "version": "1.0.0",
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmza-smha/Movies-Library.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hmza-smha/Movies-Library/issues"
+  },
+  "homepage": "https://github.com/hmza-smha/Movies-Library#readme"
+}
