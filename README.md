@@ -6,9 +6,11 @@
 ![image](imgs/http.png);
 
 ## Overview
-
+- here you can see the worst movies in the life :DD
 ## Getting Started
-<!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
+- display movies
+- search for a movie
 
 ## Project Features
-<!-- What are the features included in you app -->
+- this application dose not have any feature :D
+- go and use Egybest
