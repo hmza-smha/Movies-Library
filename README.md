@@ -6,11 +6,14 @@
 ![image](imgs/http.png);
 
 ## Overview
-- here you can see the worst movies in the life :DD
+- This application is a library for movies, so you can browse all movies and trending movies.
+
 ## Getting Started
-- display movies
-- search for a movie
+- send requests and get results.
 
 ## Project Features
-- this application dose not have any feature :D
-- go and use Egybest
+- Add new movies.
+- Add favorite movies.
+- Display favorite movies.
+- Display trending movies.
+- Search for specific movie.
