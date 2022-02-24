@@ -1,9 +1,5 @@
 'use strict';
 
-const KEY = "668baa4bb128a32b82fe0c15b21dd699";
-const DATABASE_URL = "postgres://hamza:0000@localhost:5432/moviesdb";
-const PORT = 5001;
-
 // Get express from node model
 const express = require("express");
 
@@ -12,6 +8,15 @@ const app = express();
 
 // Get axios so we can send HTTP requests to an API
 const axios = require("axios");
+
+// Read .env file
+const dotenv = require("dotenv");
+// start(configure) the dotenv
+dotenv.config();
+
+const KEY = process.env.APIKEY;
+const PORT = process.env.PORT;
+const DATABASE_URL = process.env.DATABASE_URL;
 
 // connect to DB, and init the Client
 const pg = require("pg");
@@ -38,28 +43,12 @@ app.post("/addMovie", addMovieHandler);
 
 // PUT: paths
 app.put("/update/:id", updateHandler);
-// app.put("/updateComment/:id", updateCommentHandler);
 
 // DELETE: paths
 app.delete("/delete/:id", deleteHandler)
 
 app.use("*", notFoundHandler);
 app.use(errorHandler);
-
-// function updateCommentHandler(req, res){
-//     const id = req.params.id;
-//     const movie = req.body;
-
-//     const sql = `UPDATE movies SET comment=$1 WHERE id=$2 RETURNING *`;
-//     const values = [movie.comment, id];
-//     client.query(sql, values).then((result) => {
-//         console.log(result.rows);
-//         // return res.status(200).json(result.rows);
-
-//     }).catch(error => {
-//         errorHandler(req, res, error);
-//     });
-// }
 
 function deleteHandler(req, res){
     const id = req.params.id
