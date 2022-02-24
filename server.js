@@ -16,11 +16,16 @@ dotenv.config();
 
 const KEY = process.env.APIKEY;
 const PORT = process.env.PORT;
-const DATABASE_URL = process.env.DATABASE_URL;
 
 // connect to DB, and init the Client
 const pg = require("pg");
-const client = new pg.Client(DATABASE_URL);
+
+// const client = new pg.Client(process.env.DATABASE_URL);
+
+const client = new pg.Client({
+    connectionString: process.env.DATABASE_URL,
+    ssl: { rejectUnauthorized: false }
+});
 
 // read data from JSON file
 const movies = require("./MovieData/data.json");
