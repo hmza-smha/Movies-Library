@@ -9,6 +9,8 @@ const app = express();
 // Get axios so we can send HTTP requests to an API
 const axios = require("axios");
 
+const cors = require("cors");
+
 // Read .env file
 const dotenv = require("dotenv");
 // start(configure) the dotenv
@@ -29,9 +31,12 @@ const client = new pg.Client({
 
 // read data from JSON file
 const movies = require("./MovieData/data.json");
+const req = require("express/lib/request");
 
 // To get the data from the body object, it should be upove the paths
 app.use(express.json());
+
+app.use(cors());
 
 // GET: paths
 app.get('/', moviesHandler);
