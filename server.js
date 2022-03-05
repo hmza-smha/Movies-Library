@@ -177,8 +177,11 @@ function searchHandler(req, res){
 
 function trendingHandler(request, response){
     let result = [];
-    axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${KEY}&language=en-US`)
+
+    // axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=${KEY}&language=en-US`)
+    axios.get(`https://api.themoviedb.org/3/trending/all/week?api_key=668baa4bb128a32b82fe0c15b21dd699&language=en-US`)
     .then(apiResponse => {
+        // console.log(apiResponse.data);
         apiResponse.data.results.map(value => {
             let oneResult = new Movie(value.id, value.title,value.release_date, value.poster_path, value.overview);
             result.push(oneResult);
